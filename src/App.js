@@ -14,11 +14,11 @@ function ym(dateStr) {
 export default function App() {
   const [file, setFile] = useState(null);
   const [forecastMonths, setForecastMonths] = useState(10);
-  const [topN, setTopN] = useState(10);
+  const [topN] = useState(10);
   const [startYear, setStartYear] = useState("");
   const [startMonth, setStartMonth] = useState("");
-  const [clipNegative, setClipNegative] = useState(true);
-  const [roundPreds, setRoundPreds] = useState(true);
+  const [clipNegative] = useState(true);
+  const [roundPreds] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [predictionStart, setPredictionStart] = useState("");
@@ -230,9 +230,9 @@ export default function App() {
             accept=".xlsx,.xls"
             onChange={(e) => setFile(e.target.files?.[0] || null)}
           />
-          {/* <span className="hint">
-            File must contain the coloumns as .
-          </span> */}
+          <span className="hint">
+            The Excel file should include the columns as "No.",  "Quantity", and  "Requested Delivery Date".
+          </span>
         </div>
 
         <div className="section-label">Forecast settings</div>
