@@ -1,0 +1,405 @@
+/* Global layout */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Arial, Helvetica, sans-serif;
+
+  /* background image + gradient overlay */
+ background-image: url("/public/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: #000000;
+}
+.app-logo {
+  height: 88px;
+  width: auto;
+  margin-right: 12px;
+}
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+
+/* Header */
+.app-header {
+  /* display: flex; */
+  /* align-items: flex-start;
+  justify-content: space-between; */
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+
+.logo{  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers logo horizontally */
+  gap: 12px;}
+  
+.app-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+
+      /* white outline */
+  text-shadow:
+    -1px -1px 0 #000000,
+     1px -1px 0 #000000,
+    -1px  1px 0 #000000,
+     1px  1px 0 #000000;
+}
+
+/* .card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 25px;
+  animation: fadeIn 0.6s ease-in-out;
+} */
+
+.app-title-pill {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.app-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Make header stack nicely on small screens */
+@media (max-width: 640px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-title {
+    font-size: 22px;
+  }
+}
+
+/* Cards */
+.card {
+  /* glass background */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); /* for Safari */
+
+  padding: 24px 20px;
+  border-radius: 20px;
+
+  /* border + soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  margin-bottom: 25px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.card-header {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card-subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #353a46;
+}
+
+/* Rows / labels */
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.row label {
+  font-size: 17px;
+  font-weight: 500;
+  color: #353a46;
+}
+
+.row span.hint {
+  font-size: 11px;
+  color: #353a46;
+}
+.hintnew{
+    font-size: 14px;
+}
+.RunButton{
+  font-weight: 700;
+}
+/* Grid inside the input card */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+/* Inputs */
+input[type="file"],
+input[type="number"],
+input[type="text"],
+input {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  background: #f9fafb;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+input[type="file"] {
+  padding: 6px;
+  background: #f3f4f6;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+  background: #ffffff;
+}
+
+/* Select */
+select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+  background: #ffffff;
+}
+
+/* Button */
+button {
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.25);
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    opacity 0.12s ease, filter 0.12s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 26px rgba(37, 99, 235, 0.3);
+  filter: brightness(1.03);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.25);
+}
+
+button:disabled {
+  background: #9ca3af;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Status text */
+.error {
+  color: #b91c1c;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.info {
+  margin-top: 10px;
+  color: #374151;
+  font-size: 13px;
+}
+
+/* Table */
+.tableWrap {
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  text-align: left;
+}
+
+thead th {
+  background: #f9fafb;
+  font-weight: 600;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+tbody tr:nth-child(even) {
+  background: #fcfcfd;
+}
+
+tbody tr:hover {
+  background: #eff6ff;
+}
+
+/* Small text */
+.small {
+  font-size: 12px;
+  color: #353a46;
+  margin-top: 8px;
+}
+
+/* Chart box */
+.chartBox {
+  margin-top: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f9fafb;
+  overflow: auto;
+}
+
+.chartImg {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Tag pill above table */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Tiny dot */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+/* Section label */
+.section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4a4e55;
+  margin-bottom: 6px;
+  margin-top: 26px;
+}
+
+/* Bottom layout: chart + table */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.tableScroll {
+  max-height: 350px;     /* adjust height as you like */
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Optional: improve table appearance */
+.tableScroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tableScroll th,
+.tableScroll td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tableScroll thead th {
+  background: #f9fafb;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.card-title2 {
+  margin-bottom:3;
+  margin-top: 0%;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* On small screens stack vertically */
+@media (max-width: 900px) {
+  .bottom-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
